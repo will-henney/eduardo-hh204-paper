@@ -4,8 +4,9 @@
 
 \usepackage{graphicx}	% Including figure files
 \usepackage{caption}
+
 %\usepackage{adjustbox}
-\usepackage{subcaption}
+%\usepackage{subcaption}
 
 \usepackage{multirow}
 
@@ -68,6 +69,13 @@
 \graphicspath{{./}{figures/}}
 %% This is the end of the preamble.  Indicate the beginning of the
 %% manuscript itself with \begin{document}.
+
+\catcode`\*=11
+\makeatletter
+\let\longtable*\@undefined
+\let\endlongtable*\@undefined
+\makeatother
+\catcode`\*=12
 
 \begin{document}
 
@@ -293,31 +301,35 @@ Cut 2 & $0.42 \pm 0.09$ &$0.30 \pm 0.04$\\
 
 \begin{figure*}
 \centering
-  \begin{subfigure}{6cm}
+  \begin{minipage}{6cm}
     \centering\includegraphics[height=2cm,width=\columnwidth]{2D_3729.pdf}
-    \caption{[O\thinspace II] $\lambda 3729$.}
-  \end{subfigure}
-  \begin{subfigure}{6cm}
+    \centerline{(a) [O\thinspace II] $\lambda 3729$.}
+    \smallskip
+  \end{minipage}
+  \begin{minipage}{6cm}
     \centering\includegraphics[height=2cm,width=\columnwidth]{2D_4959.pdf}
-    \caption{[O\thinspace III] $\lambda 4959$.}
-  \end{subfigure}
+    \centerline{(b) [O\thinspace III] $\lambda 4959$.}
+    \smallskip
+  \end{minipage}
  
-  \begin{subfigure}{6cm}
+  \begin{minipage}{6cm}
     \centering\includegraphics[height=2cm , width=\columnwidth]{2D_6300.pdf}
-    \caption{[O\thinspace I] $\lambda 6300$.}
-  \end{subfigure}
-  \begin{subfigure}{6cm}
+    \centerline{(c) [O\thinspace I] $\lambda 6300$.}
+    \smallskip
+  \end{minipage}
+  \begin{minipage}{6cm}
     \centering\includegraphics[height=2cm , width=\columnwidth]{2D_4649.pdf}
-    \caption{O\thinspace II $\lambda 4649$.}
-  \end{subfigure}
+    \centerline{(d) O\thinspace II $\lambda 4649$.}
+    \smallskip
+  \end{minipage}
   
-\begin{subfigure}{10cm}
-\centering\includegraphics[height=4cm, width=\columnwidth]{2D_4658_cuts.pdf}
-\caption{[Fe\thinspace III] $\lambda 4658$.} 
-
-\end{subfigure}
-\caption{\textit{Upper panels:} Sample of representative lines in the bi-dimensional spectrum. The Y axis corresponds to the spatial direction (up southeast, down northwest, see Fig.~\ref{fig:hh204-finding-chart-simple} for the spatial location of the slit) while the X axis is the spectral axis. All figures are centered at $\lambda_0$, the rest-frame reference wavelength of each line. The ``ball-shaped'' emission corresponds to HH~204. The slightly blue shifted component with respect to the nebular one is the ``Diffuse Blue Layer'' \citep{Deharveng73,garciadiaz07}, mainly noticeable in the emission of low ionization ions such as [O\thinspace II]. \textit{Bottom panel:} Emission of the [Fe\thinspace III] $\lambda 4658$ line as well as the limits and extension of the different spatial cuts selected to analyse each velocity component. Cut 1 is at the bottom, which corresponds to the westernmost one. The spatial coverage is 7.38 arcsec and 1.97 arcsec for cuts 1 and 2, respectively. The velocity scale is heliocentric.}
-\label{fig:cuts}
+  \begin{minipage}{10cm}
+    \centering\includegraphics[height=4cm, width=\columnwidth]{2D_4658_cuts.pdf}
+    \centerline{(e) [Fe\thinspace III] $\lambda 4658$.} 
+    \smallskip
+  \end{minipage}
+  \caption{\textit{Upper panels:} Sample of representative lines in the bi-dimensional spectrum. The Y axis corresponds to the spatial direction (up southeast, down northwest, see Fig.~\ref{fig:hh204-finding-chart-simple} for the spatial location of the slit) while the X axis is the spectral axis. All figures are centered at $\lambda_0$, the rest-frame reference wavelength of each line. The ``ball-shaped'' emission corresponds to HH~204. The slightly blue shifted component with respect to the nebular one is the ``Diffuse Blue Layer'' \citep{Deharveng73,garciadiaz07}, mainly noticeable in the emission of low ionization ions such as [O\thinspace II]. \textit{Bottom panel:} Emission of the [Fe\thinspace III] $\lambda 4658$ line as well as the limits and extension of the different spatial cuts selected to analyse each velocity component. Cut 1 is at the bottom, which corresponds to the westernmost one. The spatial coverage is 7.38 arcsec and 1.97 arcsec for cuts 1 and 2, respectively. The velocity scale is heliocentric.}
+  \label{fig:cuts}
 \end{figure*}
 
 %\cesar{No entiendo esto de que sea heliocentrica, el punto de velocidad cero del panel (e) a que valor corresponde? respecto a la longitud de onda en laboratorio en el sistema heliocentrico (corrigiendo de la velocidad orbital terrestre)?} \eduardo{si, la velocidad 0 esta centrada en $\lambda_0$}
@@ -1625,29 +1637,33 @@ Distance & $T_{\rm e}\text{([N\thinspace II])}$ & $T_{\rm e}\text{([S\thinspace 
 
 \begin{figure*}
 \centering
-  \begin{subfigure}{7.5cm}
+  \begin{minipage}{7.5cm}
     %\centering\includegraphics[height=4cm,width=\columnwidth]{gatito-cesped_0.jpg}
     \centering\includegraphics[height=4cm,width=\columnwidth]{physical_diag_HH204.png}
 
-    \caption{Cut 1, HH~204.}
-  \end{subfigure}
-  \begin{subfigure}{7.5cm}
+    \centerline{(a) Cut 1, HH~204.}
+    \smallskip
+  \end{minipage}
+  \begin{minipage}{7.5cm}
      %\centering\includegraphics[height=4cm,width=\columnwidth]{gatito-cesped_0.jpg}
     \centering\includegraphics[height=4cm,width=\columnwidth]{physical_diag_nebandbluelayer.png}
-    \caption{Cut 1, nebular emission plus Blue Layer emission.}
-  \end{subfigure}
+    \centerline{(b) Cut 1, nebular emission plus Blue Layer emission.}
+    \smallskip
+  \end{minipage}
  
-  \begin{subfigure}{7.5cm}
+  \begin{minipage}{7.5cm}
    %\centering\includegraphics[height=4cm,width=\columnwidth]{gatito-cesped_0.jpg}
     \centering\includegraphics[height=4cm,width=\columnwidth]{physical_diag_blue_layer.png}
-    \caption{Cut 2, Blue Layer.}
-  \end{subfigure}
-  \begin{subfigure}{7.5cm}
+    \centerline{(c) Cut 2, Blue Layer.}
+    \smallskip
+  \end{minipage}
+  \begin{minipage}{7.5cm}
    % \centering\includegraphics[height=4cm,width=\columnwidth]{gatito-cesped_0.jpg}
 
     \centering\includegraphics[height=4cm,width=\columnwidth]{physical_diag_nebular.png}
-    \caption{Cut 2, nebular component.}
-  \end{subfigure}
+    \centerline{(d) Cut 2, nebular component.}
+    \smallskip
+  \end{minipage}
 
   \caption{Plasma diagnostic plots for the individual analyzed components. The labeled diagnostics correspond to those discussed in Sec.~\ref{subsec:physical_cond}.}
 \label{fig:plasma}
@@ -1723,3 +1739,8 @@ Several works have studied the possible existence of small spatial scale variati
 %\cesar{OK, estoy deacuerdo con tu comentario, habria que dejar mas claro en el texto que, aunque se calcula como magnitudes (t2 y T0) in the plane of the sky (citar los anteriores intentos de Adal y O'Dell(imagen HST)), la simetria de la estructura geometrica del jet hace que sea posible considerarlo como magnitudes integradas en el volumen, según la definicion canonica de las fluctuaciones de temperatura.}
 %\cesar{Este ejercicio estima la t2 en el plano del cielo, no a lo largo de la linea de vision o integrada en el volumen, Adal en su articulo de 2008 hizo este ejercicio pero obtuvo valores mas peque\~nos. Para distinguir esta t2 y T0 en el plano del cielo, las denomina t2A y T0A} \eduardo{Por la geometría del jet que se desplaza casi sobre el plano del cielo, no se esperarian grandes cambios a lo largo de la linea de vision. Como la rendija está casi en el eje de simetría de la figura de revolución, cada punto de las medidas pixel a pixel daría las condiciones representativas de un disco de gas. Los cambios importantes se esperarían al moverte entre discos, es decir en el plano del cielo, pero no azimutalmente dentro del disco. En el caso de la nebulosa de Orión la situación cambia, porque no se sabe bien la geometría del volumen que se integra, el volumen de gas integrado en la línea de visión es mayor y seguramente no hay simetría. Aunque es una situación idealizada, porque podría haber algunas asimetrías en el jet, no creo que sean tan grandes como para causar inhomogeneidades azimutales medibles.}
 
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
