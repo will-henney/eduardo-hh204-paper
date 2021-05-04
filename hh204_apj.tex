@@ -67,6 +67,14 @@
 \shortauthors{M\'endez-Delgado et al.}
 
 \graphicspath{{./}{figures/}}
+
+\catcode`\*=11
+\makeatletter
+\let\longtable*\@undefined
+\let\endlongtable*\@undefined
+\makeatother
+\catcode`\*=12
+
 %% This is the end of the preamble.  Indicate the beginning of the
 %% manuscript itself with \begin{document}.
 
